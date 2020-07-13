@@ -5,6 +5,7 @@ import com.sun.source.tree.DoWhileLoopTree;
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.DoubleFunction;
 
 public class Principal {
     static ArrayList<Poligono> poligono=new ArrayList<Poligono>();
@@ -66,5 +67,8 @@ public class Principal {
         System.out.println("Area: "+i.area());
         System.out.println("-----------------------------");
     }
+
     }
+
+
 }

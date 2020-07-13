@@ -22,4 +22,6 @@ public class Ejercicio1 {
         float area=(lado1*lado2);
         return area;
     }
+
+
 }

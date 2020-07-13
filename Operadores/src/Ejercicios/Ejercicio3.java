@@ -1,5 +1,10 @@
 package Ejercicios;
 
+import com.sun.jdi.PathSearchingVirtualMachine;
+
+import javax.crypto.spec.PBEKeySpec;
+import java.util.function.DoubleFunction;
+
 public class Ejercicio3 {
     private int numeroAtleta;
     private String nombreAtleta;
@@ -18,4 +23,6 @@ public class Ejercicio3 {
     public String ganador(){
         return "El Ganador es \n Nombre: "+nombreAtleta+"\n Numero de atleta: "+numeroAtleta+"\n Con tiempo de : "+tiempoAtleta;
     }
+
+
 }
