@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Frame extends javax.swing.JFrame {
  static ArrayList<Tarjeta> Datos=new ArrayList<Tarjeta>();   
+ static ArrayList<Propietario> Propie=new ArrayList<Propietario>();   
     /**
      * Creates new form Frame
      */
@@ -88,6 +89,8 @@ public class Frame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Muestra = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
@@ -421,7 +424,7 @@ public class Frame extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Agregar/Actualizar", jPanel2);
@@ -432,15 +435,41 @@ public class Frame extends javax.swing.JFrame {
         Muestra.setRows(5);
         jScrollPane3.setViewportView(Muestra);
 
+        jButton1.setText("Mostrar Datos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Limpiar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jScrollPane3)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
 
         jTabbedPane1.addTab("Datos", jPanel1);
@@ -473,7 +502,7 @@ public class Frame extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Resumen", jPanel4);
@@ -523,8 +552,7 @@ public class Frame extends javax.swing.JFrame {
        Vehiculo vehiculo=new Vehiculo(txtSerie.getText(),txtMotor.getText(),txtCilindros.getText(),txtMarca.getText(),txtModelo.getText(),txtLinea.getText(),txtAsientos.getText(),txtPlaca.getText(),txtChasis.getText(),type);
        Tarjeta Tarjeta1=new Tarjeta(txtNoTarjeta.getText(),txtUso.getText(),vehiculo);
         Datos.add(Tarjeta1);
-      this.Muestra.append(prop.agregar());
-                this.Muestra.append(MostrarDatos());
+        Propie.add(prop);
                 System.out.println(""+prop.agregar());
                 vehiculo.agregar();
                 Tarjeta1.agregar();
@@ -536,6 +564,20 @@ public class Frame extends javax.swing.JFrame {
        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      this.Muestra.append("'Datos de los Propietarios'");
+      this.Muestra.append("\n---------------------------\n");
+        this.Muestra.append(MostrarDatosPropietarios());
+        this.Muestra.append("\n'Datos de vehiculos'");
+         this.Muestra.append("\n---------------------------\n");
+                this.Muestra.append(MostrarDatos());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Muestra.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -577,6 +619,8 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JTextArea Muestra;
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -649,14 +693,33 @@ public void Limpiar(){
     this.txtMarca.setText(""); 
     this.txtTipo.setText("");
 }
-    public String MostrarDatos () {
+    public String MostrarDatosPropietarios () {
+    String inf2="";
+    for(Propietario y: Propie){
+            inf2+="\n-------------------------"
+                +"\nNombres: "+y.getNombre()
+                +"\nApellidos:"+y.getApellido()
+                +"\nDireccion: "+y.getDireccion()
+                    +"\nTelefono: "+y.getTelefono()
+                    +"\nFecha De Nacimiento: "+y.getFechaDeNacimiento()
+                    +"\nEdad: "+y.calcularEdad(y.getFechaDeNacimiento())
+                    +"\nNIT: "+y.getNit()
+                    +"\nCUI: "+y.getCui()
+                    +"\n-------------------------";
+  
+    }
+return inf2;      
+   
+        
+    }
+      public String MostrarDatos () {
     String inf="";
     for(Tarjeta x: Datos){
         inf+="No Tarjeta: "+x.getNoTarjeta()+"\nUSO:"+x.getUso()+"\nPlaca:"+x.getVehiculo().getPlaca()
                 +"\nChasis: "+x.getVehiculo().getChasis()+"\nSerie"+x.getVehiculo().getSerie()
                 +"\n Motor"+x.getVehiculo().getMotor()+"\nCilindros:"+x.getVehiculo().getCilindros()
                 +"\nMarca:"+x.getVehiculo().getMarca()+"\nModelo:"+x.getVehiculo().getModelo()+"\nLinea:"+x.getVehiculo().getLinea()
-                +"\nAsientos:"+x.getVehiculo().getAsientos()+"\nTipo: "+x.getVehiculo().getTipe().getTipo();
+                +"\nAsientos:"+x.getVehiculo().getAsientos()+"\nTipo: "+x.getVehiculo().getTipe().getTipo()+"\n-------------------------\n";
   
     }
 return inf;      
