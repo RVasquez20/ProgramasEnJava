@@ -20,8 +20,8 @@ public class Propietario extends Persona {
 
 
 
-    public Propietario(String nit, double cui, String nombre, String apellido, String direccion, int telefono) {
-        super(nombre, apellido, direccion, telefono);
+    public Propietario(String nit, double cui, String nombre, String apellido, String direccion, int telefono,String fechaDeNacimiento) {
+        super(nombre, apellido, direccion, telefono,fechaDeNacimiento);
         this.nit = nit;
         this.cui = cui;
     }
@@ -45,13 +45,15 @@ public class Propietario extends Persona {
     @Override
     public String agregar() { 
         String x="";
-        x+="-------------------------------------------------\n"
+        x+="\n-------------------------------------------------\n"
                 + "Nombre: "+this.getNombre()
         +"\nApellido: "+this.getApellido()
         +"\nDireccion: "+this.getDireccion()
         +"\nTelefono: "+this.getTelefono()
+        +"\nFecha De Nacimiento: "+this.getFechaDeNacimiento()
+       +"\nEdad: "+(calcularEdad(this.getFechaDeNacimiento()))
         +"\nNIT: "+this.getNit()
-        +"\nCUI: "+this.getCui()+"\n";
+        +"\nCUI: "+this.getCui();
         return x;
     }
     

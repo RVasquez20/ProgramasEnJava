@@ -5,6 +5,11 @@
  */
 package Tarea1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 
 /**
@@ -16,14 +21,16 @@ public abstract class Persona {
     private String apellido;
     private String direccion;
     private int telefono;
+    private String fechaDeNacimiento;
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String direccion, int telefono) {
+    public Persona(String nombre, String apellido, String direccion, int telefono,String fehchaDeNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.fechaDeNacimiento=fechaDeNacimiento;
      
     }
 
@@ -64,5 +71,33 @@ public abstract class Persona {
         String x="";
         return x;
     }
+
+    public String getFechaDeNacimiento() {
+        return fechaDeNacimiento;
+    }
+
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+       public int calcularEdad(String fecha){
+   Date fechaNac=null;
+       try {
+          
+           fechaNac = new SimpleDateFormat("dd-MM-yyyy").parse(fecha);
+       } catch (ParseException | NullPointerException ex) {
+           System.out.println("Error:");
+       }
+      
+       Calendar fechaNacimiento = Calendar.getInstance();
+       Calendar fechaActual = Calendar.getInstance();
+       fechaNacimiento.setTime(fechaNac);
+       int año = fechaActual.get(Calendar.YEAR)- fechaNacimiento.get(Calendar.YEAR);
+       int mes =fechaActual.get(Calendar.MONTH)- fechaNacimiento.get(Calendar.MONTH);
+       int dia = fechaActual.get(Calendar.DATE)- fechaNacimiento.get(Calendar.DATE);
+       if(mes<0 || (mes==0 && dia<0)){
+           año--;
+       }
+       return año;
+   }
     
 }

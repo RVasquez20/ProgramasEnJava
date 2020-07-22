@@ -49,16 +49,8 @@ public class Tarjeta {
         
         System.out.println("No Tarjeta: "+this.getNoTarjeta());
         System.out.println("USO: "+this.getUso());
-        System.out.println("Asientos"+this.vehiculo.getAsientos());
-        System.out.println("Chasis:"+this.vehiculo.getChasis());
-        System.out.println("Cilindros:"+this.vehiculo.getCilindros());
-        System.out.println("Linea: "+this.vehiculo.getLinea());
-        System.out.println("Marca: "+this.vehiculo.getMarca());
-        System.out.println("Modelo: "+this.vehiculo.getModelo());
-        System.out.println("Motor: "+this.vehiculo.getMotor());
-        System.out.println("Placa:"+this.vehiculo.getPlaca());
-        System.out.println("Serie:"+this.vehiculo.getSerie());
-        System.out.println("Tipo:"+this.vehiculo.getTipe().getTipo());
+
+ 
     }
     
 }

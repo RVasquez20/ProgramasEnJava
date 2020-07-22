@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -8,7 +8,12 @@ import Tarea1.Propietario;
 import Tarea1.Tarjeta;
 import Tarea1.Tipo;
 import Tarea1.Vehiculo;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author rodri
@@ -79,12 +84,17 @@ public class Frame extends javax.swing.JFrame {
         txtLinea = new javax.swing.JTextField();
         txtAsientos = new javax.swing.JTextField();
         txtTipo = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Muestra = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setAutoscrolls(true);
         jPanel3.setPreferredSize(new java.awt.Dimension(870, 1000));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -155,6 +165,7 @@ public class Frame extends javax.swing.JFrame {
 
         btnAgregar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnAgregar.setText("Agregar");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
@@ -185,6 +196,9 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
+        jLabel22.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
+        jLabel22.setText("Formato:    dd-mm-aaaa");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -204,7 +218,9 @@ public class Frame extends javax.swing.JFrame {
                             .addGap(37, 37, 37)
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel22))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGap(37, 37, 37)
                             .addComponent(jLabel10)
@@ -326,7 +342,8 @@ public class Frame extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -404,7 +421,7 @@ public class Frame extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Agregar/Actualizar", jPanel2);
@@ -423,10 +440,43 @@ public class Frame extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Datos", jPanel1);
+
+        Tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombres", "Apellidos", "Telefono", "Edad", "Tarjeta", "Vehiculo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Tabla.setToolTipText("");
+        Tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(Tabla);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Resumen", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -459,10 +509,13 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTipoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-       Propietario prop=new Propietario();
+        String Edad="";
+        Propietario prop=new Propietario();
        prop.setNombre(txtNombre.getText());
        prop.setApellido(txtApellidos.getText());
        prop.setDireccion(txtDireccion.getText());
+       prop.setFechaDeNacimiento(txtFechaDeNacimiento.getText());
+       Edad=prop.calcularEdad(txtFechaDeNacimiento.getText())+"";
        prop.setTelefono(Integer.parseInt(txtTelefono.getText()));
        prop.setNit(txtNit.getText());
        prop.setCui(Double.parseDouble(txtCUI.getText()));
@@ -472,10 +525,13 @@ public class Frame extends javax.swing.JFrame {
         Datos.add(Tarjeta1);
       this.Muestra.append(prop.agregar());
                 this.Muestra.append(MostrarDatos());
-                prop.agregar();
+                System.out.println(""+prop.agregar());
                 vehiculo.agregar();
                 Tarjeta1.agregar();
                 type.agregar();
+                DefaultTableModel modelo=(DefaultTableModel)Tabla.getModel();
+                String fila[]={txtNombre.getText(),txtApellidos.getText(),txtTelefono.getText(),Edad,txtNoTarjeta.getText(),txtTipo.getText()};
+                modelo.addRow(fila);
        Limpiar();
        
         // TODO add your handling code here:
@@ -519,6 +575,7 @@ public class Frame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Muestra;
+    private javax.swing.JTable Tabla;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -534,6 +591,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -545,6 +603,8 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -569,25 +629,25 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JTextField txtUso;
     // End of variables declaration//GEN-END:variables
 public void Limpiar(){
-    this.txtNombre.setText(" ");
-     this.txtApellidos.setText(" ");
-      this.txtCUI.setText(" ");
-       this.txtLinea.setText(" ");
-        this.txtChasis.setText(" ");
-         this.txtAsientos.setText(" ");
-     this.txtCilindros.setText(" ");
-      this.txtDireccion.setText(" ");
-       this.txtNoTarjeta.setText(" ");
-        this.txtModelo.setText(" ");
-     this.txtTelefono.setText(" ");
-     this.txtFechaDeNacimiento.setText(" ");
-     this.txtNit.setText(" ");
-     this.txtUso.setText(" ");
-     this.txtPlaca.setText(" ");
-     this.txtSerie.setText(" ");
-     this.txtMotor.setText(" ");
-    this.txtMarca.setText(" "); 
-    this.txtTipo.setText(" ");
+    this.txtNombre.setText("");
+     this.txtApellidos.setText("");
+      this.txtCUI.setText("");
+       this.txtLinea.setText("");
+        this.txtChasis.setText("");
+         this.txtAsientos.setText("");
+     this.txtCilindros.setText("");
+      this.txtDireccion.setText("");
+       this.txtNoTarjeta.setText("");
+        this.txtModelo.setText("");
+     this.txtTelefono.setText("");
+     this.txtFechaDeNacimiento.setText("");
+     this.txtNit.setText("");
+     this.txtUso.setText("");
+     this.txtPlaca.setText("");
+     this.txtSerie.setText("");
+     this.txtMotor.setText("");
+    this.txtMarca.setText(""); 
+    this.txtTipo.setText("");
 }
     public String MostrarDatos () {
     String inf="";
@@ -603,5 +663,6 @@ return inf;
    
         
     }
+   
 }
 
