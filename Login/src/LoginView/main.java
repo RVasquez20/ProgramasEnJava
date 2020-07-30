@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clase4;
+package LoginView;
+
+import javax.swing.JFrame;
 
 /**
  *
  * @author rodri
  */
-public class Clase4 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class main {
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hola mundo");
+         View v1=new View();
+    v1.show();
+    v1.setResizable(false);
+  
     }
-    
 }

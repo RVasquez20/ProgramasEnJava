@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
+	
+import javax.swing.JOptionPane;
 /**
  *
  * @author rodri
@@ -538,6 +540,14 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTipoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        if(txtNombre.getText().isEmpty()||txtApellidos.getText().isEmpty()||txtDireccion.getText().isEmpty()||txtFechaDeNacimiento.getText().isEmpty()
+                ||txtTelefono.getText().isEmpty()||txtNit.getText().isEmpty()||txtCUI.getText().isEmpty()
+                ||txtTipo.getText().isEmpty()||txtSerie.getText().isEmpty()||txtMotor.getText().isEmpty()
+                ||txtCilindros.getText().isEmpty()||txtMarca.getText().isEmpty()||txtModelo.getText().isEmpty()
+                ||txtLinea.getText().isEmpty()||txtAsientos.getText().isEmpty()||txtChasis.getText().isEmpty()
+                ||txtPlaca.getText().isEmpty()||txtNoTarjeta.getText().isEmpty()||txtUso.getText().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Error , Profavor llene todos los campos");
+        }else{
         String Edad="";
         Propietario prop=new Propietario();
        prop.setNombre(txtNombre.getText());
@@ -561,7 +571,7 @@ public class Frame extends javax.swing.JFrame {
                 String fila[]={txtNombre.getText(),txtApellidos.getText(),txtTelefono.getText(),Edad,txtNoTarjeta.getText(),txtTipo.getText()};
                 modelo.addRow(fila);
        Limpiar();
-       
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarActionPerformed
 
