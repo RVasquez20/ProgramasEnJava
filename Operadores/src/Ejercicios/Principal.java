@@ -2,6 +2,8 @@ package Ejercicios;
 
 
 
+import com.sun.xml.internal.ws.spi.db.FieldSetter;
+
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,6 +18,7 @@ public class Principal {
     mostrarAreas();
 
     }
+
     public static void llenarPoligono() {
         int opc;
         char resp;

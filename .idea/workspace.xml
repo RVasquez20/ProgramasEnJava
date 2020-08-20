@@ -49,13 +49,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.Estatico">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Estatico" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Estatico.Estatico" />
       <module name="Operadores" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Estatico.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ejercicios.Principal" />
+      <module name="Operadores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ejercicios.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,6 +91,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.Estatico" />
         <item itemvalue="Application.edad" />
       </list>
@@ -102,6 +116,9 @@
       <workItem from="1595384820426" duration="60000" />
       <workItem from="1595533638540" duration="763000" />
       <workItem from="1595941781854" duration="1787000" />
+      <workItem from="1596089470546" duration="148000" />
+      <workItem from="1596230573743" duration="107000" />
+      <workItem from="1596861106548" duration="3593000" />
     </task>
     <servers />
   </component>
@@ -124,22 +141,22 @@
     <option name="LIMIT_HISTORY" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1286" height="166" key="GridCell.Tab.0.bottom" timestamp="1595266529917">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1596089620792">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1286" height="166" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595266529917" />
-    <state width="1286" height="166" key="GridCell.Tab.0.center" timestamp="1595266529917">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1596089620792">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1286" height="166" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595266529917" />
-    <state width="1286" height="166" key="GridCell.Tab.0.left" timestamp="1595266529917">
+    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1596089620791">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1286" height="166" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595266529917" />
-    <state width="1286" height="166" key="GridCell.Tab.0.right" timestamp="1595266529917">
+    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1596089620791" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1596089620792">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1286" height="166" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595266529917" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1595128259653">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

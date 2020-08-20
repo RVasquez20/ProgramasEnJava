@@ -89,7 +89,9 @@ Coneccion cn;
            }
         return tabla;
         }
+       
        public void Agregar(){
+      
            try{
                cn=new Coneccion();
                PreparedStatement ptm;
