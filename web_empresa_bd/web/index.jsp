@@ -45,7 +45,7 @@
                         Puestos puestos = new Puestos();
                         HashMap<String, String> drop = puestos.drop_sangre();
                         for (String i : drop.keySet()) {
-                            out.println("<option value='" + drop.get(i)+ "'>" + drop.get(i) + "</option>");
+                            out.println("<option value='" +i+ "'>" + drop.get(i) + "</option>");
                         }
                     %>
                 </select>
