@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Modelo.Empleado;
 
-
 /**
  *
  * @author rodri
@@ -37,22 +36,22 @@ public class sr_Empleado extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet sr_Empleado</title>");            
+            out.println("<title>Servlet sr_Empleado</title>");
             out.println("</head>");
             out.println("<body>");
             if ("Agregar".equals(request.getParameter("btn_Agregar"))) {
-                Empleado empleado=new Empleado(request.getParameter("txt_Codigo"),Integer.valueOf(request.getParameter("drop_sangre")),0,request.getParameter("txt_Nombres"),request.getParameter("txt_Apellidos"),request.getParameter("txt_Direccion"),request.getParameter("txt_Telefono"),request.getParameter("txt_FechaDeNacimiento"));
-            if(empleado.Agregar()>0){
-                out.println("<h3>Ingreso Exitoso :D</h3>"); 
-                 out.println("<script>alert('Agregado Exitosamente');</script> "); 
-                 response.sendRedirect("index.jsp");
-                
-            }else{
-                 out.println("<h3>Error de ingreso :C</h3>");
+                Empleado empleado = new Empleado(request.getParameter("txt_Codigo"), Integer.valueOf(request.getParameter("drop_sangre")), 0, request.getParameter("txt_Nombres"), request.getParameter("txt_Apellidos"), request.getParameter("txt_Direccion"), request.getParameter("txt_Telefono"), request.getParameter("txt_FechaDeNacimiento"));
+                if (empleado.Agregar() > 0) {
+                    out.println("<h3>Ingreso Exitoso :D</h3>");
+                    out.println("<script>alert('Agregado Exitosamente');</script> ");
+                    response.sendRedirect("index.jsp");
+
+                } else {
+                    out.println("<h3>Error de ingreso :C</h3>");
+                }
+
             }
-           
-            }
-            
+
             out.println("</body>");
             out.println("</html>");
         }
