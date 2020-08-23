@@ -50,6 +50,7 @@
                     %>
                 </select>
                 <br><button  class="btn btn-outline-success" name="btn_Agregar" id="btn_Agregar" value="Agregar" >Agregar</button> 
+                <button  class="btn btn-outline-success" name="btn_A" id="btn_A" value="A" >A</button>
 
             </form>
         </div>
@@ -98,7 +99,7 @@
         
 <script type="text/javascript">   
 $('#tbl_Empleados').on('click','tr td', function(evt){
-
+    
    var target,idEmpleados,Codigo,Nombres,Apellidos,Direccion,Telefono,Fecha_De_Nacimiento,Puesto;
    target = $(event.target);
    idEmpleados = target.parent().data('idempleado');
@@ -109,7 +110,7 @@ $('#tbl_Empleados').on('click','tr td', function(evt){
    Telefono= target.parents("tr").find("td").eq(4).html();
    Fecha_De_Nacimiento= target.parents("tr").find("td").eq(5).html();
    Puesto= target.parents("tr").find("td").eq(6).html();
-   
+
    $("#txt_ID").val(idEmpleados);
    $("#txt_Codigo").val(Codigo);
    $("#txt_Nombres").val(Nombres);
@@ -117,7 +118,14 @@ $('#tbl_Empleados').on('click','tr td', function(evt){
    $("#txt_Direccion").val(Direccion);
    $("#txt_Telefono").val(Telefono);
    $("#txt_FechaDeNacimiento").attr("value",Fecha_De_Nacimiento);
-   $("#drop_sangre").val(Puesto);
+  // $("#drop_sangre").val(Puesto);//   $("#txt_sangre").val(Puesto);
+$("#drop_sangre option").filter(function() {
+    return $(this).text() == Puesto;
+    }).prop('selected', true);
+
+
+
+
    
 });
 </script>

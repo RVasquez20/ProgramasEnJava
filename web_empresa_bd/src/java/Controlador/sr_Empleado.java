@@ -51,6 +51,9 @@ public class sr_Empleado extends HttpServlet {
                 }
 
             }
+            if("A".equals(request.getParameter("btn_A"))){
+                out.println("<script>alert('"+Integer.valueOf(request.getParameter("drop_sangre"))+"');</script>");
+            }
 
             out.println("</body>");
             out.println("</html>");
