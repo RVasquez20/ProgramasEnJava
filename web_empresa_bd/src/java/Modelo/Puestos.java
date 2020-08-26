@@ -38,7 +38,7 @@ public class Puestos {
         return Puesto;
     }
 
-    public void setPuesto(String Puesto) {
+    public void setPuesto(String Puesto) {  
         this.Puesto = Puesto;
     }
       public HashMap drop_sangre(){

@@ -41,14 +41,14 @@ public class Empleado extends Persona{
            cn.abrirConcexion();
            
            String query;
-           query = "select empleados.idEmpleados as ID ,empleados.Codigo,empleados.Nombres,empleados.Apellidos,empleados.Direccion,empleados.Telefono,empleados.FechaDeNacimiento, puestos.Puesto from empleados inner join puestos on empleados.id_Puesto=puestos.idPuestos order by idEmpleados";
+            query = "SELECT e.idEmpleados as ID,e.Codigo,e.Nombres,e.Apellidos,e.Direccion,e.Telefono,e.FechaDeNacimiento,p.Puesto,p.idPuestos FROM empleados as e inner join puestos as p on e.id_Puesto = p.idPuestos order by ID;";
             ResultSet consulta =  cn.conexionDB.createStatement().executeQuery(query);
             
-            String encabezado [] = {"ID","Codigo","Nombres","Apellidos","Direccion","Telefono","FechaDeNacimiento","Puesto"};
+            String encabezado [] = {"ID","Codigo","Nombres","Apellidos","Direccion","Telefono","FechaDeNacimiento","Puesto","id_Puesto"};
             
             tblModelo.setColumnIdentifiers(encabezado);
             
-            String datos[]= new String[8];      
+            String datos[]= new String[9];      
             while (consulta.next())
                     {           
                       datos[0] = consulta.getString("ID");
@@ -59,6 +59,8 @@ public class Empleado extends Persona{
                       datos[5] = consulta.getString("Telefono");
                       datos[6] = consulta.getString("FechaDeNacimiento");
                       datos[7] = consulta.getString("Puesto");
+                      datos[8] = consulta.getString("idPuestos");
+                      
                       tblModelo.addRow(datos);
                     }
               cn.cerrarConecion();

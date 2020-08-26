@@ -44,14 +44,15 @@
                     <%
                         Puestos puestos = new Puestos();
                         HashMap<String, String> drop = puestos.drop_sangre();
+                        out.println("<option value='0'><<< Elija >>></option>");
                         for (String i : drop.keySet()) {
                             out.println("<option value='" +i+ "'>" + drop.get(i) + "</option>");
                         }
                     %>
                 </select>
                 <br><button  class="btn btn-outline-success" name="btn_Agregar" id="btn_Agregar" value="Agregar" >Agregar</button> 
-                <button  class="btn btn-outline-success" name="btn_A" id="btn_A" value="A" >A</button>
-
+                <button  class="btn btn-outline-primary" name="btn_A" id="btn_A" value="A" >Modificar</button>
+                <button  class="btn btn-outline-danger" name="btn_Eliminar" id="btn_Eliminar" value="Eliminar">Eliminar</button>
             </form>
         </div>
         <div class="container-fluid">
@@ -64,7 +65,6 @@
                 <th>Telefono</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Puesto</th>
-                <!--<th>Acciones</th>-->
                 </tr>
                 </thead>
                 <tbody id="tbl_Empleados">
@@ -73,8 +73,7 @@
                         Empleado empleado = new Empleado();
                         tblModelo = empleado.llenarEmpleado();
                         for (int a = 0; a < tblModelo.getRowCount(); a++) {
-                            out.println("<tr data-idempleado=" + tblModelo.getValueAt(a, 0).toString() + ">");
-
+                            out.println("<tr data-idempleado=" + tblModelo.getValueAt(a,0).toString() + " data-id_puesto=" + tblModelo.getValueAt(a,8).toString() +  ">");
                             out.println("<td >" + tblModelo.getValueAt(a, 1).toString() + "</td>");
                             out.println("<td>" + tblModelo.getValueAt(a, 2).toString() + "</td>");
                             out.println("<td>" + tblModelo.getValueAt(a, 3).toString() + "</td>");
@@ -82,8 +81,6 @@
                             out.println("<td>" + tblModelo.getValueAt(a, 5).toString() + "</td>");
                             out.println("<td>" + tblModelo.getValueAt(a, 6).toString() + "</td>");
                             out.println("<td>" + tblModelo.getValueAt(a, 7).toString() + "</td>");
-                            /*out.println("<td><a href='#'  style='color:#FFFFFF;'><i class='fa fa-pencil' aria-hidden='true' style='margin-left: 10px' ></i></a>");
-                            out.println("<i class='fa fa-trash' aria-hidden='true' style='margin-left: 20px'></i></td>");*/
                             out.println("</tr>");
                         }
 
@@ -100,16 +97,18 @@
 <script type="text/javascript">   
 $('#tbl_Empleados').on('click','tr td', function(evt){
     
-   var target,idEmpleados,Codigo,Nombres,Apellidos,Direccion,Telefono,Fecha_De_Nacimiento,Puesto;
+   var target,idEmpleados,Codigo,Nombres,Apellidos,Direccion,Telefono,Fecha_De_Nacimiento,idPuesto;
    target = $(event.target);
    idEmpleados = target.parent().data('idempleado');
+   idPuesto = target.parent().data('id_puesto');
    Codigo= target.parents("tr").find("td").eq(0).html();
    Nombres= target.parents("tr").find("td").eq(1).html();
    Apellidos= target.parents("tr").find("td").eq(2).html();
    Direccion= target.parents("tr").find("td").eq(3).html();
    Telefono= target.parents("tr").find("td").eq(4).html();
    Fecha_De_Nacimiento= target.parents("tr").find("td").eq(5).html();
-   Puesto= target.parents("tr").find("td").eq(6).html();
+        
+   
 
    $("#txt_ID").val(idEmpleados);
    $("#txt_Codigo").val(Codigo);
@@ -118,10 +117,10 @@ $('#tbl_Empleados').on('click','tr td', function(evt){
    $("#txt_Direccion").val(Direccion);
    $("#txt_Telefono").val(Telefono);
    $("#txt_FechaDeNacimiento").attr("value",Fecha_De_Nacimiento);
-  // $("#drop_sangre").val(Puesto);//   $("#txt_sangre").val(Puesto);
-$("#drop_sangre option").filter(function() {
-    return $(this).text() == Puesto;
-    }).prop('selected', true);
+   $("#drop_sangre").val(idPuesto);//   $("#txt_sangre").val(Puesto);
+/*$("#drop_sangre option").filter(function() {
+    return $(this).text() === Puesto;
+    }).prop('selected', true);*/
 
 
 

@@ -40,7 +40,8 @@ public class sr_Empleado extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             if ("Agregar".equals(request.getParameter("btn_Agregar"))) {
-                Empleado empleado = new Empleado(request.getParameter("txt_Codigo"), Integer.valueOf(request.getParameter("drop_sangre")), 0, request.getParameter("txt_Nombres"), request.getParameter("txt_Apellidos"), request.getParameter("txt_Direccion"), request.getParameter("txt_Telefono"), request.getParameter("txt_FechaDeNacimiento"));
+                Empleado empleado = new Empleado(request.getParameter("txt_Codigo"), Integer.valueOf(request.getParameter("drop_sangre")), 0, request.getParameter("txt_Nombres"), 
+    request.getParameter("txt_Apellidos"), request.getParameter("txt_Direccion"), request.getParameter("txt_Telefono"), request.getParameter("txt_FechaDeNacimiento"));
                 if (empleado.Agregar() > 0) {
                     out.println("<h3>Ingreso Exitoso :D</h3>");
                     out.println("<script>alert('Agregado Exitosamente');</script> ");
@@ -52,7 +53,16 @@ public class sr_Empleado extends HttpServlet {
 
             }
             if("A".equals(request.getParameter("btn_A"))){
-                out.println("<script>alert('"+Integer.valueOf(request.getParameter("drop_sangre"))+"');</script>");
+                
+                 out.println("<script>alert('id empleado:"+request.getParameter("txt_ID")+"');</script>");
+                 out.println("<script>alert('Codigo:"+request.getParameter("txt_Codigo")+"');</script>");                 
+               out.println("<script>alert('Nombre:"+request.getParameter("txt_Nombres")+"');</script>");
+               out.println("<script>alert('Apellido:"+request.getParameter("txt_Apellidos")+"');</script>");
+               out.println("<script>alert('Direccion:"+request.getParameter("txt_Direccion")+"');</script>");
+               out.println("<script>alert('Telefono"+request.getParameter("txt_Telefono")+"');</script>");
+                out.println("<script>alert('Fecha:"+request.getParameter("txt_FechaDeNacimiento")+"');</script>");
+                out.println("<script>alert('id puesto: "+Integer.valueOf(request.getParameter("drop_sangre"))+"');</script>");
+                
             }
 
             out.println("</body>");
