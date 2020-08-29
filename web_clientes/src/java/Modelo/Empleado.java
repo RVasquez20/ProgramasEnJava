@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  * @author rodri
  */
 public class Empleado extends Persona{
-    private String Codigo;
+    private String Codigo,Buscar;
     private int idPuesto;
    private Conexion cn;
 
@@ -158,6 +158,14 @@ public class Empleado extends Persona{
 
     public void setIdPuesto(int idPuesto) {
         this.idPuesto = idPuesto;
+    }
+
+    public String getBuscar() {
+        return Buscar;
+    }
+
+    public void setBuscar(String Buscar) {
+        this.Buscar = Buscar;
     }
 
     

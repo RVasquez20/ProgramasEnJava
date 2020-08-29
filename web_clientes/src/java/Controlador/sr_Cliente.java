@@ -17,7 +17,7 @@ import Modelo.Empleado;
  *
  * @author rodri
  */
-public class sr_Empleado extends HttpServlet {
+public class sr_Cliente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

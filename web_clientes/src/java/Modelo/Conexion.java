@@ -3,30 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clase4;
-
+package Modelo;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author rodri
  */
 
-public class Coneccion {
+public class Conexion {
    
     public Connection conexionDB;
-    static  Statement sentencia;
     public final String nameDB="db_empresa";
-
-
     public final String urlConexion=String.format("jdbc:mysql://localhost:3306/%s?useTimezone=true&serverTimezone=UTC",nameDB);
     public final String usuario="usr_empresa";
     public final String contraseña="Empres@123";
@@ -35,19 +28,17 @@ public class Coneccion {
        try{
            Class.forName(jdbc);
            conexionDB=DriverManager.getConnection(urlConexion,usuario,contraseña);
-                sentencia=conexionDB.createStatement();
-         
-                   
+          
        }catch(HeadlessException | ClassNotFoundException | SQLException ex){
            System.out.println("Error: "+ex);
        }
     }  
-        
+      
   public void cerrarConecion(){
       try{
           conexionDB.close();
       }catch(SQLException ex){
-          JOptionPane.showMessageDialog(null, "Error "+ex.getMessage());
+          
       }
   }
 }

@@ -29,7 +29,7 @@ public class agregarCliente extends javax.swing.JInternalFrame {
     
     public agregarCliente() {
         initComponents();
-         tblClientes.setModel(cliente.Leer());
+        
      
     }
 
@@ -318,7 +318,6 @@ public class agregarCliente extends javax.swing.JInternalFrame {
       con.cerrarConecion();*/
        cliente.Agregar();
        
-          tblClientes.setModel(cliente.Leer());
        limpiar();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -347,7 +346,7 @@ public class agregarCliente extends javax.swing.JInternalFrame {
        cliente.setFechaDeNacimiento(txtFechaDeNacimiento.getText());
        cliente.setNit(txtNIT.getText());
        cliente.Modificar(act);
-        tblClientes.setModel(cliente.Leer());
+     
         limpiar();
         
     }//GEN-LAST:event_btnUpdateActionPerformed
@@ -362,7 +361,7 @@ public class agregarCliente extends javax.swing.JInternalFrame {
        cliente.setFechaDeNacimiento(txtFechaDeNacimiento.getText());
        cliente.setNit(txtNIT.getText());
        cliente.Eliminar(act);
-        tblClientes.setModel(cliente.Leer());
+
         limpiar();
     }//GEN-LAST:event_btnDeleteActionPerformed
 

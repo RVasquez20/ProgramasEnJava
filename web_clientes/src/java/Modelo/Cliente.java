@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Clases;
+package Modelo;
 
-import Clases.Empleado;
-import clase4.Coneccion;
+import Modelo.Conexion;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Cliente extends Persona {
 private String nit;
-Coneccion cn;
+Conexion cn;
     public Cliente() {
     }
 
@@ -29,17 +28,16 @@ Coneccion cn;
         this.nit = nit;
     }
 
-    public Cliente(String nit, Coneccion cn) {
+    public Cliente(String nit, Conexion cn, int id, String Nombres, String Apellidos, String Direccion, String Telefono, String Fecha_Nacimiento) {
+        super(id, Nombres, Apellidos, Direccion, Telefono, Fecha_Nacimiento);
         this.nit = nit;
         this.cn = cn;
     }
 
-    public Cliente(String nit, Coneccion cn, String nombre, String apelido, String telefono, String direccion, String fechaDeNacimiento) {
-        super(nombre, apelido, telefono, direccion, fechaDeNacimiento);
+    public Cliente(String nit, Conexion cn) {
         this.nit = nit;
         this.cn = cn;
     }
-
 
     
     public String getNit() {
@@ -70,7 +68,7 @@ Coneccion cn;
        return año;
    }
 
-      public void Agregar(){}
-      public void Modificar(String x){}
-      public void Eliminar(String x){}
+      public int Agregar(){return 0;}
+      public int Modificar(){return 0;}
+      public int Eliminar(){return 0;}
 }
