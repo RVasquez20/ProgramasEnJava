@@ -1,0 +1,240 @@
+.Navegacion{
+    width: 100%;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 20px;
+    z-index: 1000;
+    box-shadow:0px 5px 3px #2c3e50;
+    
+    }
+.Navegacion ul {
+    list-style:none;
+
+}
+
+.menu-nav li{
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    border-color: #fff;
+   
+}
+.menu-nav li button{
+    
+    display: block;
+    color:#fff;
+    font-family: 'open sans';
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+     border-radius: 1em;
+}
+
+header {
+    width: 100%;
+    height: 650px;
+    display: inline-block;
+    background-image: url(https://s3.amazonaws.com/lahora.prod/file/2020/03/14144843/aula-colegio-moderna.jpg);
+    /* background: #c3d7df; */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+header .subtitulo {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+.titulo-pag {
+    margin-left: 20px;
+    margin-top: 210px;
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+}
+.menu-nav li button:hover{
+    color: #ff9f32;
+    transition: all .3s;
+}
+#New{
+    font-size: 24px;
+}
+#Mostrar{
+    font-size: 24px;
+}
+table{
+    text-align: center;
+}
+#txt_ID{
+width: 200px;
+}
+.sesgoabajo {
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+.mr-sm-2{
+    margin-left: 43%;
+}
+#myInput{
+    border-radius: 4em; 
+    border-color: #0080FF; 
+    box-shadow: 2px 2px 5px #0040FF;
+}
+.sesgoarriba {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 35vh 100vw 0 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.contenedor {
+   
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 52px 0;
+}
+
+/* Main */
+
+.sobre-nosotros {
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.slogan {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.parrafo {
+    font-size: 20px;
+    margin-bottom: 13px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 24px;
+    color: rgb(24, 16, 16);
+}
+.galeria {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.imagenes {
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.encima {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 73, 94, 0.815);
+}
+
+.encima h2 {
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: #fff;
+}
+
+.encima div {
+    position: relative;
+    display: block;
+    top: 46%;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    margin: auto;
+}
+.menu-fixed {
+    margin-top: 0px;
+	position:fixed;
+	z-index:1000;
+    top:0;
+    height:auto;
+width: 100%;
+}
+
+
+
+footer{
+    background: #2c3e50;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.25s;
+    bottom: 20px;
+}
+footer div .contenedor{
+    
+text-align: center;
+}
+.Redes h3{
+    size: 12px;
+    text-align: center;
+    color: #FFF;
+    font-family: 'Calibri';
+    padding: 15px;
+}
+.Redessociales{
+text-align: center;
+color: #c3d7df;
+width: 100%;
+/* border-top:1px solid   #aadcd2; */
+}
+
+.Redessociales li{
+    border-radius: 100%;
+    display: inline;
+}
+.Redessociales i{
+    border-radius: 100%;
+font-size: 420%;
+margin: 1%;
+padding: 5%;
+color: #c3d7df;
+}
+.Redessociales i:hover{
+    color: #ff9f32;
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5em;
+}
+.contenedor-cr{
+    size: 12px;
+    text-align: center;
+    color: #fff;
+    /* border-top:1px solid   #aadcd2; */
+}

@@ -15,4 +15,12 @@ public void mostrarDatos(){
     System.out.println("Codigo De Estudiante: "+codigoEstudiante);
     System.out.println("Nota Final: "+notaFinal);
 }
+
+
+    public String toString() {
+        return this.toString()+"Estudiante{" +
+                "codigoEstudiante=" + codigoEstudiante +
+                ", notaFinal=" + notaFinal +
+                '}';
+    }
 }

@@ -21,4 +21,13 @@ public class Persona {
     public int getEdad() {
         return edad;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }

@@ -59,6 +59,7 @@
         <div class="container-fluid">
             <table class="table table-dark table-hover">
                 <thead>
+                    <tr>
                 <th>Codigos</th>
                 <th>Nombres</th>
                 <th>Apellidos</th>

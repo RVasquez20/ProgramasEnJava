@@ -18,5 +18,8 @@ public class mainEj1 {
 
         Estudiante E1=new Estudiante(name,apellido,edad,cod,notf);
         E1.mostrarDatos();
+        System.out.println("_________________________________________");
+        Persona E2=new Estudiante(name,apellido,edad,cod,notf);
+        System.out.println(E2.toString());
     }
 }

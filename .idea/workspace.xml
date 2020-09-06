@@ -47,15 +47,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Application.Principal">
+  <component name="RunManager" selected="Application.mainEj1">
     <configuration name="Estatico" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Estatico.Estatico" />
       <module name="Operadores" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Estatico.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Principal (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Polimorfismo.Principal" />
+      <module name="Operadores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Polimorfismo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,8 +102,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="mainEj1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Herencia.mainEj1" />
+      <module name="Operadores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Herencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.mainEj1" />
+        <item itemvalue="Application.Principal (1)" />
         <item itemvalue="Application.Principal" />
         <item itemvalue="Application.Estatico" />
         <item itemvalue="Application.edad" />
@@ -119,6 +147,8 @@
       <workItem from="1596089470546" duration="148000" />
       <workItem from="1596230573743" duration="107000" />
       <workItem from="1596861106548" duration="3593000" />
+      <workItem from="1598811901968" duration="126000" />
+      <workItem from="1599283760787" duration="1134000" />
     </task>
     <servers />
   </component>
@@ -141,22 +171,46 @@
     <option name="LIMIT_HISTORY" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1596089620792">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1599284618915">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
-    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1596089620792">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1599284618915" />
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1599284903922">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
-    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1596089620791">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1599284903922" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1599284903922">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1596089620791" />
-    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1596089620792">
+    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1599284903922" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1599284903921">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1596089620792" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1599284903921" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1599284903922">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1599284903922" />
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1599284903917">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1599284903917" />
+    <state width="1323" height="227" key="GridCell.Tab.1.center" timestamp="1599284903917">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1599284903917" />
+    <state width="1323" height="227" key="GridCell.Tab.1.left" timestamp="1599284903916">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1599284903916" />
+    <state width="1323" height="227" key="GridCell.Tab.1.right" timestamp="1599284903917">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1599284903917" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1598812026937">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1598812026937" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1595128259653">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

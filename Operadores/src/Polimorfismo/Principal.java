@@ -13,6 +13,8 @@ public class Principal {
             System.out.println(i.MostrarDatos());
             System.out.println("--------------------------------------------------");
         }
+        Vehiculo ejemplo=new VehiculoDeportivo("122c","Audi","A8",12);
+        System.out.println(ejemplo.MostrarDatos());
 
     }
 }

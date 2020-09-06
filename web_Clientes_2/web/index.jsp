@@ -36,7 +36,7 @@
             <br>
             <br>
            
-            <form action="sr_Empleado" method="POST" class="form-group">
+            <form action="srv_Clientes" method="POST" class="form-group">
                 <label><b>ID</b></label> <input type="text" name="txt_ID" class="form-control" id="txt_ID" placeholder="ID" value="0" readonly style="width: 300px"><br>
                 <label for="lbl_NIT"><b>NIT:</b></label>
                 <input type="text" name="txt_NIT" class="form-control" id="txt_NIT" placeholder="Ejemplo: 1234567-8" required><br>
